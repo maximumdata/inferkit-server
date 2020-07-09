@@ -1,0 +1,36 @@
+{
+  "name": "inferkit-server",
+  "version": "1.0.0",
+  "description": "Express server and front end to replicate talktotransformer, using inferkit api",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=prod babel-node index.js",
+    "dev": "NODE_ENV=dev nodemon --exec babel-node index.js",
+    "test": "echo \"its working :)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximumdata/inferkit-server.git"
+  },
+  "keywords": [
+    "express",
+    "inferkit",
+    "api"
+  ],
+  "author": "Mike Dettmer <mike@mikedettmer.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximumdata/inferkit-server/issues"
+  },
+  "homepage": "https://github.com/maximumdata/inferkit-server#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
