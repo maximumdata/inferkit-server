@@ -9,13 +9,11 @@ router.post('/', async (req, res, next) => {
   const {
     body: { input, key }
   } = req;
-  if (key !== (currentKey || 'jackmrocks')) {
-    return res
-      .status(401)
-      .json({
-        msg:
-          'Key is missing or incorrect. Say !api in the bloard discord to get the current key'
-      });
+  if (key !== 'jackmrocks' && key !== currentKey) {
+    return res.status(401).json({
+      msg:
+        'Key is missing or incorrect. Say !api in the bloard discord to get the current key'
+    });
   }
   if (!input) {
     const err = new Error('Missing input in request');
