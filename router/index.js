@@ -1,15 +1,18 @@
 import { Router } from 'express';
 import inferkitRequest from '../services/inferkitRequest';
 import getCurrentKey from '../services/getCurrentKey';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const router = Router();
+const { env: { JACKMPASSWORD } } = process;
 
 router.post('/', async (req, res, next) => {
   const currentKey = await getCurrentKey();
   const {
     body: { input, key }
   } = req;
-  if (key !== currentKey) {
+  if (key !== JACKMPASSWORD && key !== currentKey) {
     return res.status(401).json({
       msg:
         'Key is missing or incorrect. Say !api in the bloard discord to get the current key'
